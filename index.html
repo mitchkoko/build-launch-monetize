@@ -8,196 +8,116 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Reset default browser styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Base styles for the body */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
+/* Base styles for the body */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
 
-        /* Container to center content and set max width */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+/* Container to center content and set max width */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 
-        /* Hero section styling with gradient background */
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(160deg, #f5f5f5 0%, #e0e0e0 100%);
-        }
+/* Hero section styling with gradient background */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(160deg, #f5f5f5 0%, #e0e0e0 100%);
+}
 
-        /* Main heading with gradient text effect */
-        h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 4.5rem;
-            margin-bottom: 0;
-            background: linear-gradient(to right, #333 0%, #666 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* Main heading with gradient text effect */
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    margin-bottom: 0;
+    background: linear-gradient(to right, #333 0%, #666 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        /* Hero section subtitle */
-        .hero p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 32px;
-        }
+/* Hero section subtitle */
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 32px;
+}
 
-        /* Call-to-action button styling */
-        .cta-button {
-            display: inline-block;
-            padding: 16px 32px;
-            background-color: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: transform 0.2s, background-color 0.2s;
-        }
+/* Call-to-action button styling */
+.cta-button {
+    display: inline-block;
+    padding: 16px 32px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.2s, background-color 0.2s;
+}
 
-        /* Button hover effect */
-        .cta-button:hover {
-            background-color: #444;
-            transform: translateY(-2px);
-        }
+/* Button hover effect */
+.cta-button:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
 
-        /* Section spacing and layout */
-        .section {
-            padding: 80px 0;
-        }
+/* Section spacing and layout - MODIFIED */
+.section {
+    padding: 40px 0; /* Reduced from 80px to 40px */
+}
 
-        /* Section titles styling */
-        .section-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #333;
-        }
+/* Section titles styling */
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px; /* Reduced from 40px to 20px */
+    color: #333;
+}
 
-        /* Grid layout for cards */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
+/* Feature list styling */
+.features-list {
+    list-style-type: none;
+}
 
-        /* Individual card styling */
-        .card {
-            background: white;
-            padding: 32px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+/* Feature list items with arrow */
+.features-list li {
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+}
 
-        /* Card heading */
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 16px;
-            color: #333;
-        }
+/* Arrow before feature list items */
+.features-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #666;
+}
 
-        /* Card text */
-        .card p {
-            color: #666;
-        }
+/* Responsive design adjustments for mobile */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+    }
 
-        /* Feature list styling */
-        .features-list {
-            list-style-type: none;
-        }
+    .hero p {
+        font-size: 1.25rem;
+    }
 
-        /* Feature list items with arrow */
-        .features-list li {
-            margin-bottom: 12px;
-            padding-left: 24px;
-            position: relative;
-        }
-
-        /* Arrow before feature list items */
-        .features-list li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #666;
-        }
-
-        /* Curriculum section container */
-        .curriculum {
-            background: white;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Curriculum section heading */
-        .curriculum h3 {
-            font-size: 1.5rem;
-            margin-bottom: 24px;
-            color: #333;
-        }
-
-        /* Module container */
-        .module {
-            margin-bottom: 32px;
-        }
-
-        /* Module heading */
-        .module h4 {
-            font-size: 1.25rem;
-            margin-bottom: 16px;
-            color: #444;
-        }
-
-        /* Module list styling */
-        .module-list {
-            list-style-type: none;
-            color: #666;
-        }
-
-        /* Module list items with bullet points */
-        .module-list li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        /* Bullet points before module list items */
-        .module-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #666;
-        }
-
-        /* Responsive design adjustments for mobile */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3.5rem;
-            }
-
-            .hero p {
-                font-size: 1.25rem;
-            }
-
-            .section {
-                padding: 40px 0;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    .section {
+        padding: 20px 0; /* Reduced from 40px to 20px for mobile */
+    }
+}
     </style>
 </head>
 <body>
@@ -212,69 +132,45 @@
 
     <div class="container">
 
-        <!-- What You'll Build section with feature list -->
+         <!-- End goal section with feature list -->
+         <section class="section">
+            <h2 class="section-title">End Goal of this course</h2>
+            <p>By the end of this course, you will have learned how to code apps with Flutter, launch on both Apple App Store (iOS) and Google Play Store (Android), get users, and monetize. This is my playbook guide that I have learned over the years on how to successfully build, launch and monetize apps.</p>
+        </section>
+
+        <!-- What You'll BUILD section with feature list -->
         <section class="section">
-            <h2 class="section-title">What You'll Build</h2>
+            <h2 class="section-title">Build</h2>
             <ul class="features-list">
-                <li>A professional app with email, Apple, and Google authentication</li>
-                <li>Offline and online database functionality</li>
-                <li>Professional landing page with custom domain</li>
-                <li>Complete app monetization system with subscriptions and payments</li>
-                <li>Marketing and user acquisition strategy</li>
+                <li>Flutter Setup</li>
+                <li>Programming Fundamentals</li>
+                <li>Widgets</li>
+                <li>State Management</li>
+                <li>Authentication</li>
+                <li>Database</li>
             </ul>
         </section>
 
-        <!-- Course Outline section with curriculum -->
+        <!-- LAUNCH section with feature list -->
         <section class="section">
-            <h2 class="section-title">Course Outline</h2>
-            <div class="curriculum">
-                <div class="module">
-                    <h4>1. Build</h4>
-                    <ul class="module-list">
-                        <li>Flutter Setup</li>
-                        <li>Programming Fundamentals</li>
-                        <li>Widgets</li>
-                        <li>State Management</li>
-                        <li>Authentication</li>
-                        <li>Database</li>
-                    </ul>
-                </div>
-                <div class="module">
-                    <h4>2. Launch</h4>
-                    <ul class="module-list">
-                        <li>Publish on Apple App Store (iOS) & Google Play Store (Android)</li>
-                        <li>Professional Landing Page</li>
-                        <li>Marketing</li>
-                    </ul>
-                </div>
-                <div class="module">
-                    <h4>3. Monetize</h4>
-                    <ul class="module-list">
-                        <li>One Time Payment</li>
-                        <li>Ad Integration</li>
-                        <li>Subscription</li>
-                    </ul>
-                </div>
-            </div>
+            <h2 class="section-title">Launch</h2>
+            <ul class="features-list">
+                <li>Publish on Apple App Store (iOS) & Google Play Store (Android)</li>
+                <li>Professional Landing Page</li>
+                <li>Marketing</li>
+            </ul>
         </section>
-        <!-- Who This Course Is For section with cards -->
+
+        <!-- MONETIZE section with feature list -->
         <section class="section">
-            <h2 class="section-title">Who This Course Is For</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Aspiring App Developers</h3>
-                    <p>Perfect for those serious about building and monetizing their own apps, whether you're a complete beginner or have some coding experience.</p>
-                </div>
-                <div class="card">
-                    <h3>Companies & Startups</h3>
-                    <p>Ideal for businesses looking to expand their mobile presence and teams wanting to bring app development in-house.</p>
-                </div>
-                <div class="card">
-                    <h3>Portfolio Builders</h3>
-                    <p>Great for developers seeking to enhance their portfolio with a professional, full-stack mobile application.</p>
-                </div>
-            </div>
+            <h2 class="section-title">Monetize</h2>
+            <ul class="features-list">
+                <li>One Time Payment</li>
+                <li>Ad Integration</li>
+                <li>Subscription</li>
+            </ul>
         </section>
+
     </div>
     
 </body>
