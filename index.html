@@ -4,141 +4,280 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flutter Course 2025</title>
-    <!-- Import fonts from Google Fonts - Bebas Neue for headings, Inter for body text -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset default browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-/* Base styles for the body */
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #2A2A2A;
+            line-height: 1.6;
+        }
 
-/* Container to center content and set max width */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
 
-/* Hero section styling with gradient background */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(160deg, #f5f5f5 0%, #e0e0e0 100%);
-}
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(160deg, #ffffff 0%, #f5f5f5 100%);
+            border-bottom: 1px solid #eee;
+        }
 
-/* Main heading with gradient text effect */
-h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 4.5rem;
-    margin-bottom: 0;
-    background: linear-gradient(to right, #333 0%, #666 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            color: #2A2A2A;
+        }
 
-/* Hero section subtitle */
-.hero p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 32px;
-}
+        .hero p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
 
-/* Call-to-action button styling */
-.cta-button {
-    display: inline-block;
-    padding: 16px 32px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: transform 0.2s, background-color 0.2s;
-}
+        .cta-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background-color: #2A2A2A;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
 
-/* Button hover effect */
-.cta-button:hover {
-    background-color: #444;
-    transform: translateY(-2px);
-}
+        .cta-button:hover {
+            background-color: #404040;
+            transform: translateY(-2px);
+        }
 
-/* Section spacing and layout - MODIFIED */
-.section {
-    padding: 40px 0; /* Reduced from 80px to 40px */
-}
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
 
-/* Section titles styling */
-.section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 20px; /* Reduced from 40px to 20px */
-    color: #333;
-}
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #2A2A2A;
+            letter-spacing: -0.5px;
+        }
 
-/* Feature list styling */
-.features-list {
-    list-style-type: none;
-}
+        .features-list {
+            list-style-type: none;
+            max-width: 800px;
+        }
 
-/* Feature list items with arrow */
-.features-list li {
-    margin-bottom: 12px;
-    padding-left: 24px;
-    position: relative;
-}
+        .features-list li {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            position: relative;
+            color: #4A4A4A;
+        }
 
-/* Arrow before feature list items */
-.features-list li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #666;
-}
+        .features-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #666;
+        }
 
-/* Responsive design adjustments for mobile */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 3.5rem;
-    }
+        .features-list a {
+            background: linear-gradient(45deg, #6366F1, #818CF8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative;
+            padding-bottom: 2px;
+            font-weight: 500;
+        }
 
-    .hero p {
-        font-size: 1.25rem;
-    }
+        .features-list a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(45deg, #6366F1, #818CF8);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
 
-    .section {
-        padding: 20px 0; /* Reduced from 40px to 20px for mobile */
-    }
-}
+        .features-list a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Remove the apps-list horizontal styling */
+        .apps-list li {
+            margin-bottom: 16px; /* Match the spacing of other list items */
+        }
+
+        .apps-list li:last-child {
+            margin-bottom: 0;
+        }
+
+
+        .pricing-section {
+            background: linear-gradient(160deg, #f8f8f8 0%, #ffffff 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .pricing-section .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #2A2A2A;
+            letter-spacing: -0.5px;
+        }
+
+        .pricing-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+            font-weight: 400;
+        }
+
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #2A2A2A;
+            letter-spacing: -0.5px;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #2A2A2A;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .pricing-card p {
+            color: #666;
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 280px;
+        }
+
+        .buy-now-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background-color: #2A2A2A;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .buy-now-button:hover {
+            background-color: #404040;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+            }
+
+            .pricing-card {
+                padding: 32px 24px;
+            }
+
+            .pricing-section {
+                padding: 60px 0;
+            }
+
+            .pricing-section .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Hero section with main heading and CTA -->
     <div class="hero">
         <div class="container">
             <h1>Flutter Course 2025</h1>
             <p>Build, Launch, & Monetize Apps</p>
-            <a href="#" class="cta-button">Buy</a>
+            <a href="#pricing" class="cta-button">Buy</a>
         </div>
     </div>
 
     <div class="container">
-
-         <!-- GOAL section with feature list -->
         <section class="section">
             <h2 class="section-title">Goal</h2>
             <p>The end goal is for you to have an app with users that pay money. This course aims to provide all the necessary tools and fundamentals needed to build, launch and monetize an app in 2025. Good luck!</p>
         </section>
 
-        <!-- What You'll BUILD section with feature list -->
         <section class="section">
             <h2 class="section-title">Build</h2>
             <ul class="features-list">
@@ -151,7 +290,6 @@ h1 {
             </ul>
         </section>
 
-        <!-- LAUNCH section with feature list -->
         <section class="section">
             <h2 class="section-title">Launch</h2>
             <ul class="features-list">
@@ -161,7 +299,6 @@ h1 {
             </ul>
         </section>
 
-        <!-- MONETIZE section with feature list -->
         <section class="section">
             <h2 class="section-title">Monetize</h2>
             <ul class="features-list">
@@ -172,15 +309,38 @@ h1 {
             </ul>
         </section>
 
-        <!-- APPS section with feature list -->
         <section class="section">
-        <h2 class="section-title">Apps</h2>
-        <ul class="features-list">
-            <li><a href="https://ritualz.app" target="_blank" style="color: rgb(255, 151, 169);">Ritualz</a></li>
-            <li><a href="https://dollatracker.app" target="_blank" style="color: rgb(255, 151, 169);">Dolla Tracker</a></li>
-        </ul>
+            <h2 class="section-title">Apps</h2>
+            <ul class="features-list apps-list">
+                <li><a href="https://ritualz.app" target="_blank">Ritualz</a></li>
+                <li><a href="https://dollatracker.app" target="_blank">Dolla Tracker</a></li>
+            </ul>
         </section>
     </div>
-    
+
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Purchase For Life</h2>
+            <p class="pricing-subtitle">Includes lifetime access to all future updates</p>
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <h3>Ebook</h3>
+                    <div class="price">$19</div>
+                    <p>In written form (pdf)</p>
+                    <a href="#" class="buy-now-button">Buy Now</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Video Course</h3>
+                    <div class="price">$99</div>
+                    <p>10 hours of content + ebook</p>
+                    <a href="#" class="buy-now-button">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Always scroll to top on page load
+        window.scrollTo(0, 0);
+    </script>
 </body>
 </html>
