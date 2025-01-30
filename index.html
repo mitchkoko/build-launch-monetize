@@ -37,7 +37,7 @@
             font-size: 3.5rem;
             font-weight: 700;
             letter-spacing: -1px;
-            margin-bottom: 20px;
+            margin-bottom: 0px;
             color: #2A2A2A;
         }
 
@@ -125,15 +125,13 @@
             transform-origin: left;
         }
 
-        /* Remove the apps-list horizontal styling */
         .apps-list li {
-            margin-bottom: 16px; /* Match the spacing of other list items */
+            margin-bottom: 16px;
         }
 
         .apps-list li:last-child {
             margin-bottom: 0;
         }
-
 
         .pricing-section {
             background: linear-gradient(160deg, #f8f8f8 0%, #ffffff 100%);
@@ -156,12 +154,11 @@
             font-weight: 400;
         }
 
-
         .pricing-container {
             display: flex;
             justify-content: center;
             gap: 40px;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -171,7 +168,7 @@
             border-radius: 24px;
             padding: 40px;
             width: 100%;
-            max-width: 400px;
+            max-width: 350px;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             display: flex;
@@ -225,6 +222,16 @@
             transform: translateY(-2px);
         }
 
+        @media (max-width: 1024px) {
+            .pricing-container {
+                flex-wrap: wrap;
+            }
+            
+            .pricing-card {
+                max-width: calc(50% - 20px);
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 24px 20px;
@@ -250,6 +257,7 @@
 
             .pricing-card {
                 padding: 32px 24px;
+                max-width: 100%;
             }
 
             .pricing-section {
@@ -266,8 +274,8 @@
 <body>
     <div class="hero">
         <div class="container">
-            <h1>Flutter Course 2025</h1>
-            <p>Build, Launch, & Monetize Apps</p>
+            <h1>Build, Launch & Monetize Apps</h1>
+            <p>Flutter Course 2025</p>
             <a href="#pricing" class="cta-button">Buy</a>
         </div>
     </div>
@@ -294,7 +302,7 @@
             <h2 class="section-title">Launch</h2>
             <ul class="features-list">
                 <li>Publish on Apple App Store (iOS) & Google Play Store (Android)</li>
-                <li>Landing Page</li>
+                <li>Landing Page (html, css)</li>
                 <li>Marketing</li>
             </ul>
         </section>
@@ -326,14 +334,20 @@
                 <div class="pricing-card">
                     <h3>Ebook</h3>
                     <div class="price">$19</div>
-                    <p>In written form (pdf)</p>
-                    <a href="#" class="buy-now-button">Buy Now</a>
+                    <p>pdf</p>
+                    <a href="#" class="buy-now-button">Buy</a>
                 </div>
                 <div class="pricing-card">
-                    <h3>Video Course</h3>
+                    <h3>Course</h3>
                     <div class="price">$99</div>
-                    <p>10 hours of content + ebook</p>
-                    <a href="#" class="buy-now-button">Buy Now</a>
+                    <p>ebook + video</p>
+                    <a href="#" class="buy-now-button">Buy</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Pro</h3>
+                    <div class="price">$149</div>
+                    <p>ebook + video + code</p>
+                    <a href="#" class="buy-now-button">Buy</a>
                 </div>
             </div>
         </div>
