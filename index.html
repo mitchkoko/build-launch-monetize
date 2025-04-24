@@ -4,8 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Build, Launch & Monetize Apps</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Inter family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            /* Colors */
+            --color-primary: #1d1d1f;
+            --color-secondary: #666;
+            --color-background: #ffffff;
+            --color-light-bg: #f5f5f7;
+            --color-lighter-bg: #f8f8f8;
+            --color-hero-bg: #eff0f0;
+            --color-text: #2A2A2A;
+            --color-text-light: #555;
+            --color-white: #ffffff;
+            --color-accent: #0071e3;
+            --color-card-border: #eaeaea;
+            
+            /* Spacing */
+            --spacing-xxs: 8px;
+            --spacing-xs: 16px;
+            --spacing-sm: 24px;
+            --spacing-md: 32px;
+            --spacing-lg: 48px;
+            --spacing-xl: 64px;
+            --spacing-xxl: 80px;
+            
+            /* Border radius */
+            --radius-sm: 12px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            
+            /* Shadows */
+            --shadow-light: 0 8px 16px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 12px 24px rgba(0, 0, 0, 0.08);
+            --shadow-heavy: 0 16px 32px rgba(0, 0, 0, 0.12);
+            
+            /* Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-size-xs: 0.875rem;
+            --font-size-sm: 1rem;
+            --font-size-md: 1.125rem;
+            --font-size-lg: 1.5rem;
+            --font-size-xl: 2rem;
+            --font-size-xxl: 2.75rem;
+            --font-size-xxxl: 3.25rem;
+            --line-height: 1.5;
+        }
+
+        /* ===== GLOBAL STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -14,228 +62,381 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #2A2A2A;
-            line-height: 1.6;
+            font-family: var(--font-family);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: var(--line-height);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 1200px;
+            width: 1140px;
+            max-width: 90%;
             margin: 0 auto;
-            padding: 40px 24px;
+            padding: 0;
         }
 
+        /* ===== HERO SECTION ===== */
         .hero {
+            position: relative;
+            background-color: var(--color-hero-bg);
+            overflow: hidden;
+            min-height: 850px; /* Set minimum height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(160deg, #ffffff 0%, #f5f5f5 100%);
-            border-bottom: 1px solid #eee;
+            padding-top: 0;
+        }
+        .logo {
+            width: 300px;
+            height: 300px;
         }
 
-        h1 {
-            font-size: 3.5rem;
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hero-content {
+            max-width: 760px;
+            padding: 0 var(--spacing-md);
+        }
+
+        .hero-title {
+            font-size: 2.75rem; /* Fixed size instead of variable */
             font-weight: 700;
             letter-spacing: -1px;
-            margin-bottom: 0px;
-            color: #2A2A2A;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-primary);
+            line-height: 1.1;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: #666;
-            margin-bottom: 40px;
+        .hero-subtitle {
+            font-size: 1.25rem; /* Fixed size instead of variable */
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-xxl);
             font-weight: 400;
         }
 
-        .cta-button {
+        /* ===== BUTTONS ===== */
+        .btn {
             display: inline-block;
             padding: 16px 32px;
-            background-color: #2A2A2A;
-            color: white;
+            background-color: var(--color-primary);
+            color: var(--color-white);
             text-decoration: none;
-            border-radius: 12px;
-            font-weight: 500;
-            transition: all 0.2s ease;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
-        .cta-button:hover {
-            background-color: #404040;
+        .btn:hover {
+            background-color: #333;
             transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
         }
 
+        .btn-buy {
+            width: 100%;
+            display: block;
+        }
+
+        /* ===== SCROLL INDICATOR ===== */
+        .scroll-indicator {
+            position: absolute;
+            bottom: var(--spacing-lg);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--color-white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-light);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            50% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        .scroll-indicator svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--color-primary);
+        }
+
+        /* ===== SECTIONS ===== */
         .section {
-            padding: 60px 0;
-            border-bottom: 1px solid #eee;
+            padding: 0;
+        }
+
+        .section-inner {
+            margin: 0;
+            max-width: 100%;
+            padding-left: var(--spacing-lg);
+            padding-right: var(--spacing-lg);
+            padding-top: var(--spacing-lg);
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: var(--font-size-xl);
             font-weight: 700;
-            margin-bottom: 24px;
-            color: #2A2A2A;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-primary);
             letter-spacing: -0.5px;
         }
 
-        .features-list {
-            list-style-type: none;
-            max-width: 800px;
+        .section-title.large {
+            font-size: var(--font-size-xl);
+            letter-spacing: -0.5px;
         }
 
-        .features-list li {
-            margin-bottom: 16px;
-            padding-left: 24px;
-            position: relative;
-            color: #4A4A4A;
+        .section-subtitle {
+            font-size: var(--font-size-xl);
+            margin: 0 0 var(--spacing-sm) 0;
+            font-weight: 600;
         }
 
-        .features-list li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #666;
-        }
-
-        .features-list a {
-            background: linear-gradient(45deg, #6366F1, #818CF8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            position: relative;
-            padding-bottom: 2px;
-            font-weight: 500;
-        }
-
-        .features-list a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
+        .section p {
+            font-size: var(--font-size-md);
             width: 100%;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-light);
+        }
+
+        .divider {
             height: 1px;
-            background: linear-gradient(45deg, #6366F1, #818CF8);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s ease;
+            background-color: #eee;
+            margin: var(--spacing-xs) 0 var(--spacing-lg);
+            width: 100%;
         }
 
-        .features-list a:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
+        /* ===== FEATURES GRID ===== */
+        .features-section {
+            background-color: var(--color-background);
+            padding-top: var(--spacing-xs);
+            padding-bottom: var(--spacing-xl);
         }
 
-        .apps-list li {
-            margin-bottom: 16px;
+        .feature-group {
+            margin-bottom: var(--spacing-xl);
+            padding-left: var(--spacing-lg);
+            padding-right: var(--spacing-lg);
         }
 
-        .apps-list li:last-child {
+        .feature-group:last-child {
             margin-bottom: 0;
         }
 
-        .timestamp-link {
-            font-size: 0.9em;
-            margin-left: 8px;
-            background: linear-gradient(45deg, #FF0000, #FF4444);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-            transition: all 0.2s ease;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns instead of auto-fit */
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
         }
 
-        .timestamp-link:hover {
-            opacity: 0.8;
+        .feature-card {
+            background-color: var(--color-white);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--color-card-border);
         }
 
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            background-color: var(--color-light-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: var(--spacing-sm);
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--color-primary);
+        }
+
+        .feature-content h4 {
+            font-size: var(--font-size-md);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xxs);
+            color: var(--color-primary);
+        }
+
+        .feature-content p {
+            font-size: var(--font-size-sm);
+            color: var(--color-secondary);
+            margin: 0;
+        }
+
+        /* ===== PRICING SECTION ===== */
         .pricing-section {
-            background: linear-gradient(160deg, #f8f8f8 0%, #ffffff 100%);
-            padding: 100px 0;
+            background-color: var(--color-hero-bg);
+            padding: var(--spacing-xxl) 0;
             text-align: center;
         }
 
-        .pricing-section .section-title {
-            font-size: 2.5rem;
+        .pricing-title {
+            font-size: var(--font-size-xxxl);
             font-weight: 700;
-            margin-bottom: 12px;
-            color: #2A2A2A;
-            letter-spacing: -0.5px;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-primary);
+            letter-spacing: -1px;
         }
 
         .pricing-subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 60px;
+            font-size: var(--font-size-md);
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-xl);
             font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .pricing-container {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            max-width: 1200px;
+            gap: var(--spacing-lg);
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 24px;
         }
 
         .pricing-card {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl) var(--spacing-lg);
             width: 100%;
-            max-width: 350px;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            max-width: 380px;
+            box-shadow: var(--shadow-medium);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            border: 1px solid var(--color-card-border);
         }
 
         .pricing-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .pricing-card-header {
+            margin-bottom: var(--spacing-md);
         }
 
         .pricing-card h3 {
-            font-size: 1.75rem;
+            font-size: var(--font-size-xl);
             font-weight: 700;
-            margin-bottom: 24px;
-            color: #2A2A2A;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-primary);
             letter-spacing: -0.5px;
         }
 
         .price {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            color: #2A2A2A;
-            margin-bottom: 24px;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
             letter-spacing: -1px;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+        }
+
+        .price span {
+            font-size: var(--font-size-md);
+            font-weight: 500;
+            color: var(--color-secondary);
+            margin-left: 4px;
         }
 
         .pricing-card p {
-            color: #666;
-            margin-bottom: 32px;
-            font-size: 1.1rem;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-lg);
+            font-size: var(--font-size-md);
             line-height: 1.6;
             max-width: 280px;
         }
 
-        .buy-now-button {
-            display: inline-block;
-            padding: 16px 32px;
-            background-color: #2A2A2A;
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 500;
-            transition: all 0.2s ease;
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: var(--spacing-lg);
+            width: 100%;
         }
 
-        .buy-now-button:hover {
-            background-color: #404040;
-            transform: translateY(-2px);
+        .pricing-features li {
+            padding: var(--spacing-xs) 0;
+            font-size: var(--font-size-sm);
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #f0f0f0;
         }
 
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li svg {
+            width: 16px;
+            height: 16px;
+            fill: #4CAF50;
+            margin-right: var(--spacing-xs);
+            flex-shrink: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            background-color: var(--color-hero-bg);
+            color: var(--color-secondary);
+            font-size: var(--font-size-xs);
+        }
+
+        /* ===== MEDIA QUERIES ===== */
+        @media (min-width: 1441px) {
+            /* Controls sizing on large displays */
+            .container {
+                width: 1140px; /* Fixed width on large screens */
+                max-width: 1140px;
+            }
+            
+            .hero-content {
+                max-width: 760px;
+            }
+        }
+        
         @media (max-width: 1024px) {
             .pricing-container {
                 flex-wrap: wrap;
@@ -247,112 +448,293 @@
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 24px 20px;
+            :root {
+                --font-size-xxl: 2.25rem;
+                --font-size-xxxl: 2.5rem;
+                --font-size-xl: 1.75rem;
+                --font-size-lg: 1.25rem;
             }
 
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero {
-                padding: 60px 20px;
-            }
-
-            .section {
-                padding: 40px 0;
+            .features-grid {
+                grid-template-columns: 1fr;
             }
 
             .pricing-container {
                 flex-direction: column;
                 align-items: center;
-                gap: 24px;
+                gap: var(--spacing-lg);
             }
 
             .pricing-card {
-                padding: 32px 24px;
                 max-width: 100%;
             }
+        }
 
-            .pricing-section {
-                padding: 60px 0;
+        @media (max-width: 480px) {
+            :root {
+                --font-size-xxl: 2rem;
+                --font-size-xxxl: 2.25rem;
+                --font-size-xl: 1.5rem;
+                --font-size-lg: 1.125rem;
             }
-
-            .pricing-section .section-title {
-                font-size: 2rem;
-                margin-bottom: 40px;
+            
+            .section {
+                padding: var(--spacing-lg) 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <div class="container">
-            <h1>Build, Launch & Monetize Apps</h1>
-            <p>from scratch.</p>
-            <a href="#pricing" class="cta-button">Start</a>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="logo">
+            <!-- Logo Image -->
+            <img src="images/logo_simple.png" alt="Build Launch Monetize Logo">
         </div>
-    </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Build, Launch & Monetize Apps</h1>
+            <p class="hero-subtitle">from scratch</p>
+        </div>
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+            </svg>
+        </div>
+    </header>
 
-    <div class="container">
+    <main>
+        <!-- Goal Section -->
         <section class="section">
-            <h2 class="section-title">Goal</h2>
-            <p>The end goal is for you to have an app with users that pay money. This course will start from scratch and take you through the journey to publishing a production-ready app with monetization. Good luck!</p>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Build</h2>
-            <ul class="features-list">
-                <li>Flutter Beginner Course<a href="https://youtu.be/HQ_ytw58tC4?si=TLZmeEn-MujxrMBb&t=206" target="_blank" class="timestamp-link">(watch →)</a></li>
-                <li>Authentication (Email, Apple, Google Sign In)</li>
-                <li>Database (Firebase)</li>
-                <li>State Management (BLoC)</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Launch</h2>
-            <ul class="features-list">
-                <li>Publish on Apple App Store (iOS)</li>
-                <li>Landing Page (html, css)</li>
-                <li>Marketing</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Monetize</h2>
-            <ul class="features-list">
-                <li>Free</li>
-                <li>One Time Payment</li>
-                <li>Subscription (Revenuecat)</li>
-            </ul>
-        </section>
-
-    </div>
-
-    <section id="pricing" class="pricing-section">
-        <div class="container">
-            <h2 class="section-title">Purchase For Life</h2>
-            <p class="pricing-subtitle">Includes lifetime access to all future updates</p>
-            <div class="pricing-container">
-                <div class="pricing-card">
-                    <h3>Course</h3>
-                    <div class="price">$299</div>
-                    <p>Full Video Course From Scratch</p>
-                    <a href="https://mitchkoko.gumroad.com/l/buildlaunchmonetize" class="buy-now-button">Buy</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Pro</h3>
-                    <div class="price">$399</div>
-                    <p>Course + Code</p>
-                    <a href="https://mitchkoko.gumroad.com/l/buildlaunchmonetizepro" class="buy-now-button">Buy</a>
+            <div class="container">
+                <div class="section-inner">
+                    <h2 class="section-title section-subtitle">Goal</h2>
+                    <p>The end goal is for you to have an app with users that pay money. This course will start completely from scratch and take you through the journey to publishing a production-ready app with monetization. Good luck!</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <div class="divider"></div>
+                <!-- Build Features -->
+                <div class="feature-group">
+                    <h3 class="section-title section-subtitle">Build</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Authentication</h4>
+                                <p>Email, Apple & Google Sign In</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M3,5H21V9H3V5M3,11H21V15H3V11M3,17H21V21H3V17Z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Database</h4>
+                                <p>Firebase</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12,18.54L19.37,12.8L21,14.07L12,21.07L3,14.07L4.62,12.81L12,18.54M12,16L3,9L12,2L21,9L12,16M12,4.53L6.26,9L12,13.47L17.74,9L12,4.53Z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>State Management</h4>
+                                <p>BLoC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Launch Features -->
+                <div class="feature-group">
+                    <h3 class="section-title section-subtitle">Launch</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Apple App Store</h4>
+                                <p>Navigate the submission and approval process</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M10,19L12,15H9V10L7,14H10V19Z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Landing Page</h4>
+                                <p>Create & host a landing page with basic html, css</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12 6.5C13.5 6.5 14.5 5.5 14.5 4C14.5 2.5 13.5 1.5 12 1.5C10.5 1.5 9.5 2.5 9.5 4C9.5 5.5 10.5 6.5 12 6.5M12 8.5C9.5 8.5 7.5 6.5 7.5 4C7.5 1.5 9.5 -0.5 12 -0.5C14.5 -0.5 16.5 1.5 16.5 4C16.5 6.5 14.5 8.5 12 8.5M13.5 20H10.5V12H13.5V20M12 9.5C7 9.5 2.73 12.11 0 16.5V20H24V16.5C21.27 12.11 17 9.5 12 9.5Z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Marketing</h4>
+                                <p>Implement strategies to reach your target audience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Monetize Features -->
+                <div class="feature-group">
+                    <h3 class="section-title section-subtitle">Monetize</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8L16,12L12,16L8,12L12,8Z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Free</h4>
+                                <p>Strategies for free apps with premium upgrades</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>One-Time Payment</h4>
+                                <p>Implement and optimize paid app purchase flows</p>
+                            </div>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M21,8V6H7V8H21M21,16V11H7V16H21M21,18H7V20H21V18M5,18H3V20H5V18M5,11H3V16H5V11M5,6H3V8H5V6Z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Subscription</h4>
+                                <p>Create recurring revenue with subscription models</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <h2 class="section-title pricing-title">Purchase For Life</h2>
+                <p class="pricing-subtitle">Includes lifetime access to all future updates</p>
+                <div class="pricing-container">
+                    <!-- Course Option -->
+                    <div class="pricing-card">
+                        <div class="pricing-card-header">
+                            <h3>Standard</h3>
+                            <div class="price">$299<span></span></div>
+                            <p>The Complete Course</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                </svg>
+                                4hr+ Video Lessons
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                </svg>
+                                Lifetime Access
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                </svg>
+                                Future Updates
+                            </li>
+                        </ul>
+                        <a href="https://mitchkoko.gumroad.com/l/buildlaunchmonetize" class="btn btn-buy">Buy Now</a>
+                    </div>
+                    <!-- Pro Option -->
+                    <div class="pricing-card">
+                        <div class="pricing-card-header">
+                            <h3>Pro</h3>
+                            <div class="price">$399<span></span></div>
+                            <p>The Professional Package</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                </svg>
+                                Everything in Standard
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                </svg>
+                                Full Source Code
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                </svg>
+                                Premium Support
+                            </li>
+                        </ul>
+                        <a href="https://mitchkoko.gumroad.com/l/buildlaunchmonetizepro" class="btn btn-buy">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Build, Launch & Monetize Apps. All rights reserved.</p>
+    </footer>
+    
+    <!-- JavaScript -->
     <script>
-        // Always scroll to top on page load
-        window.scrollTo(0, 0);
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Scroll to top on page load
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+        });
     </script>
 </body>
 </html>
