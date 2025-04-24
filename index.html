@@ -29,7 +29,7 @@
             --spacing-md: 32px;
             --spacing-lg: 48px;
             --spacing-xl: 64px;
-            --spacing-xxl: 80px;
+            --spacing-xxl: 88px;
             
             /* Border radius */
             --radius-sm: 12px;
@@ -186,11 +186,10 @@
         }
 
         .section-inner {
-            margin: 0;
             max-width: 100%;
             padding-left: var(--spacing-lg);
             padding-right: var(--spacing-lg);
-            padding-top: var(--spacing-lg);
+            padding-top: var(--spacing-xxl);
         }
 
         .section-title {
@@ -230,7 +229,7 @@
         .features-section {
             background-color: var(--color-background);
             padding-top: var(--spacing-xs);
-            padding-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-xxl);
         }
 
         .feature-group {
@@ -275,6 +274,7 @@
             justify-content: center;
             align-items: center;
             margin-right: var(--spacing-sm);
+            aspect-ratio: 1/1;
         }
 
         .feature-icon svg {
@@ -567,8 +567,9 @@
                     <div class="features-grid">
                         <div class="feature-card">
                             <div class="feature-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/>
+                                <!-- Apple Logo SVG -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 384 512" fill="currentColor">
+                                    <path d="M318.7 268.6c-.3-42.8 19.2-75.1 59.4-98.6-22.1-32.3-55.5-50.4-99.5-54.9-41.7-4.2-87.6 24.5-102.4 24.5s-54.1-23.8-88.9-23.1c-68.3 1-138.2 61-137.4 156.2.7 49.6 18.7 101.5 51.3 139.3 24.2 27.8 53.3 58.9 91.7 57.8 36.1-1 49.8-23.5 93.3-23.5s55.1 23.5 93.2 22.7c38.7-.6 63.1-29.2 86.8-57.4 27.4-32.6 38.7-64.1 39.4-65.7-1-.5-74.8-28.7-75.1-113.3zm-66.3-223.7c17.6-21.4 29.5-51.3 26.2-81.2-25.3 1-55.8 16.8-73.6 38.2-16.2 18.9-30.2 49.3-26.4 78.2 28.1 2.2 56.4-14.3 73.8-35.2z"/>
                                 </svg>
                             </div>
                             <div class="feature-content">
@@ -578,8 +579,9 @@
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">
+                                <!-- Landing Page - using a web page icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M10,19L12,15H9V10L7,14H10V19Z"/>
+                                    <path d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"/>
                                 </svg>
                             </div>
                             <div class="feature-content">
@@ -589,8 +591,9 @@
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">
+                                <!-- Marketing - using a megaphone/bullhorn icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 6.5C13.5 6.5 14.5 5.5 14.5 4C14.5 2.5 13.5 1.5 12 1.5C10.5 1.5 9.5 2.5 9.5 4C9.5 5.5 10.5 6.5 12 6.5M12 8.5C9.5 8.5 7.5 6.5 7.5 4C7.5 1.5 9.5 -0.5 12 -0.5C14.5 -0.5 16.5 1.5 16.5 4C16.5 6.5 14.5 8.5 12 8.5M13.5 20H10.5V12H13.5V20M12 9.5C7 9.5 2.73 12.11 0 16.5V20H24V16.5C21.27 12.11 17 9.5 12 9.5Z"/>
+                                    <path d="M12,8H4A2,2 0 0,0 2,10V14A2,2 0 0,0 4,16H5V20A1,1 0 0,0 6,21H8A1,1 0 0,0 9,20V16H12L17,20V4L12,8M21.5,12C21.5,13.71 20.54,15.26 19,16V8C20.53,8.75 21.5,10.3 21.5,12Z"/>
                                 </svg>
                             </div>
                             <div class="feature-content">
@@ -609,8 +612,9 @@
                     <div class="features-grid">
                         <div class="feature-card">
                             <div class="feature-icon">
+                                <!-- Free - using a gift icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8L16,12L12,16L8,12L12,8Z"/>
+                                    <path d="M22,12V20A2,2 0 0,1 20,22H4A2,2 0 0,1 2,20V12A1,1 0 0,1 1,11V8A2,2 0 0,1 3,6H6.17C6.06,5.69 6,5.35 6,5A3,3 0 0,1 9,2C10,2 10.88,2.5 11.43,3.24V3.23L12,4L12.57,3.23V3.24C13.12,2.5 14,2 15,2A3,3 0 0,1 18,5C18,5.35 17.94,5.69 17.83,6H21A2,2 0 0,1 23,8V11A1,1 0 0,1 22,12M4,20H11V12H4V20M20,20V12H13V20H20M9,4A1,1 0 0,0 8,5A1,1 0 0,0 9,6A1,1 0 0,0 10,5A1,1 0 0,0 9,4M15,4A1,1 0 0,0 14,5A1,1 0 0,0 15,6A1,1 0 0,0 16,5A1,1 0 0,0 15,4M3,8V10H11V8H3M13,8V10H21V8H13Z"/>
                                 </svg>
                             </div>
                             <div class="feature-content">
@@ -642,7 +646,10 @@
                         </div>
                     </div>
                 </div>
+                <div class="divider"></div>
+
             </div>
+
         </section>
 
         <!-- Pricing Section -->
