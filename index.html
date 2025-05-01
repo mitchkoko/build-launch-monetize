@@ -415,19 +415,37 @@
             flex-shrink: 0;
         }
 
-        /* Image Section */
+        /* Image/Video Section */
         .image-section {
             padding: 0;
             padding-bottom: 4rem;
-
         }
 
         .full-width-image {
-            width: 100%;
+            width: 25%;
             max-width: 1000px;
             border-radius: var(--radius-md);
             display: block;
             margin: 0 auto;
+        }
+        
+        /* Preview Section Styles */
+        .preview-section {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .preview-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+        
+        .preview-media {
+            width: 100%;
+            display: block;
+            border-radius: var(--radius-md);
         }
 
         /* ===== FOOTER ===== */
@@ -524,7 +542,8 @@
             <div class="container">
                 <div class="section-inner">
                     <h2 class="section-title section-subtitle">Goal</h2>
-                    <p>The end goal is for you to have an app with users that pay money. This course will start completely from scratch and take you through the journey to publishing a production-ready app with monetization. Good luck!</p>
+                    <p>The end goal is for you to have an app with users that pay money. This course will start completely from scratch and take you through the journey of publishing a production-ready app with monetization.</p>
+                    <p>Every app is different, so I designed this course to focus on the core building blocks that every app needs. The app you'll build is a minimal, Reddit-style social platform. Good luck!</p>
                 </div>
             </div>
         </section>
@@ -537,6 +556,32 @@
                 <div class="feature-group">
                     <h3 class="section-title section-subtitle">Build</h3>
                     <div class="features-grid">
+                        <!-- Flutter Card -->
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <!-- Flutter Logo SVG -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357L14.314 0zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Flutter Framework</h4>
+                                <p>Cross-platform app development</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Authentication</h4>
+                                <p>Email, Apple & Google sign-in</p>
+                            </div>
+                        </div>
+                        
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -544,10 +589,11 @@
                                 </svg>
                             </div>
                             <div class="feature-content">
-                                <h4>Authentication</h4>
-                                <p>Email, Apple & Google</p>
+                                <h4>Profile</h4>
+                                <p>User management, blocking & reporting</p>
                             </div>
                         </div>
+                        
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -556,9 +602,10 @@
                             </div>
                             <div class="feature-content">
                                 <h4>Database</h4>
-                                <p>Firebase</p>
+                                <p>Firebase for posts, comments & interactions</p>
                             </div>
                         </div>
+                        
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -567,7 +614,20 @@
                             </div>
                             <div class="feature-content">
                                 <h4>State Management</h4>
-                                <p>BLoC</p>
+                                <p>BLoC, Cubits & Clean Architecture</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <!-- Theme Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12,3C7.03,3 3,7.03 3,12C3,16.97 7.03,21 12,21C16.97,21 21,16.97 21,12C21,7.03 16.97,3 12,3M12,19C8.13,19 5,15.87 5,12C5,8.13 8.13,5 12,5C15.87,5 19,8.13 19,12C19,15.87 15.87,19 12,19M12,7C9.24,7 7,9.24 7,12H9C9,10.34 10.34,9 12,9V7Z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>UI/UX Design</h4>
+                                <p>Light/Dark themes & custom widgets</p>
                             </div>
                         </div>
                     </div>
@@ -588,7 +648,7 @@
                             </div>
                             <div class="feature-content">
                                 <h4>Apple App Store</h4>
-                                <p>Navigate the submission and approval process</p>
+                                <p>App preparation, icons & submission process</p>
                             </div>
                         </div>
                         <div class="feature-card">
@@ -600,7 +660,7 @@
                             </div>
                             <div class="feature-content">
                                 <h4>Landing Page</h4>
-                                <p>Create & host a landing page with html, css</p>
+                                <p>HTML/CSS page with privacy policy on GitHub Pages</p>
                             </div>
                         </div>
                         <div class="feature-card">
@@ -612,7 +672,7 @@
                             </div>
                             <div class="feature-content">
                                 <h4>Marketing</h4>
-                                <p>Implement strategies to reach your target audience</p>
+                                <p>Social media organic marketing strategies</p>
                             </div>
                         </div>
                     </div>
@@ -655,7 +715,7 @@
                             </div>
                             <div class="feature-content">
                                 <h4>Subscription</h4>
-                                <p>Create recurring revenue with subscription models</p>
+                                <p>RevenueCAT integration for recurring revenue</p>
                             </div>
                         </div>
                     </div>
@@ -663,10 +723,11 @@
 
                 <div class="divider"></div>
 
-
+               
+        
             </div>
-
         </section>
+
 
         <!-- Pricing Section -->
         <section id="pricing" class="pricing-section">
@@ -736,8 +797,6 @@
             </div>
         </section>
     </main>
-
-    
     
     <!-- Footer -->
     <footer class="footer">
