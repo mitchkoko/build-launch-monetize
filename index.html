@@ -415,6 +415,11 @@
             flex-shrink: 0;
         }
 
+        .excluded-feature span {
+        text-decoration: line-through;
+        color: #a0a0a0;
+        }
+
         /* Image/Video Section */
         .image-section {
             padding: 0;
@@ -543,7 +548,7 @@
                 <div class="section-inner">
                     <h2 class="section-title section-subtitle">Goal</h2>
                     <p>The end goal is for you to have an app with users that pay money. This course will start completely from scratch and take you through the journey of publishing a production-ready app with monetization.</p>
-                    <p>Every app is different, so I designed this course to focus on the core building blocks that every app needs. The app you'll build is a minimal, Reddit-style social platform. Good luck!</p>
+                    <p>Every app is different, so I designed this course to focus on the core building blocks that every app needs. The app you'll build is a minimal social media / reddit style app. Good luck!</p>
                 </div>
             </div>
         </section>
@@ -715,7 +720,7 @@
                             </div>
                             <div class="feature-content">
                                 <h4>Subscription</h4>
-                                <p>RevenueCAT integration for recurring revenue</p>
+                                <p>Revenuecat integration for recurring revenue</p>
                             </div>
                         </div>
                     </div>
@@ -732,34 +737,87 @@
         <!-- Pricing Section -->
         <section id="pricing" class="pricing-section">
             <div class="container">
-                <h2 class="section-title pricing-title">Purchase For Life</h2>
+                <h2 class="section-title pricing-title">Choose Your Level</h2>
                 <p class="pricing-subtitle">Includes lifetime access to all future updates</p>
                 <div class="pricing-container">
+                    <!-- Beginner Option -->
+                    <div class="pricing-card">
+                        <div class="pricing-card-header">
+                            <h3>Starter</h3>
+                            <div class="price">$99<span></span></div>
+                            <p>Code a complete app from scratch.</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" fill="#2ecc71"/>
+                                </svg>
+                                Build Course
+                            </li>
+                            <li class="excluded-feature">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: #e74c3c;">
+                                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                                </svg>
+                                <span>Launch Course</span>
+                            </li>
+                            <li class="excluded-feature">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: #e74c3c;">
+                                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                                </svg>
+                                <span>Monetize Course</span>
+                            </li>
+                            <li class="excluded-feature">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: #e74c3c;">
+                                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                                </svg>
+                                <span>Full Source Code</span>
+                            </li>
+                            <li class="excluded-feature">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: #e74c3c;">
+                                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                                </svg>
+                                <span>Priority Chat Support</span>
+                            </li>
+                        </ul>
+                        <a href="https://mitchkoko.gumroad.com/l/buildlaunchmonetizestarter" class="btn btn-buy">Buy Now</a>
+                    </div>
                     <!-- Course Option -->
                     <div class="pricing-card">
                         <div class="pricing-card-header">
                             <h3>Standard</h3>
                             <div class="price">$199<span></span></div>
-                            <p>The Complete Course</p>
+                            <p>Build, launch & monetize apps.</p>
                         </div>
                         <ul class="pricing-features">
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" fill="#2ecc71"/>
                                 </svg>
-                                All 3 Video Modules
+                                Build Course
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" fill="#2ecc71"/>
                                 </svg>
-                                Lifetime Access
+                                Launch Course
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" fill="#2ecc71"/>
                                 </svg>
-                                Future Updates
+                                Monetize Course
+                            </li>
+                            <li class="excluded-feature">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: #e74c3c;">
+                                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                                </svg>
+                                <span>Full Source Code</span>
+                            </li>
+                            <li class="excluded-feature">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: #e74c3c;">
+                                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                                </svg>
+                                <span>Priority Chat Support</span>
                             </li>
                         </ul>
                         <a href="https://mitchkoko.gumroad.com/l/buildlaunchmonetize" class="btn btn-buy">Buy Now</a>
@@ -769,24 +827,36 @@
                         <div class="pricing-card-header">
                             <h3>Pro</h3>
                             <div class="price">$299<span></span></div>
-                            <p>The Professional Package</p>
+                            <p>The Professional Package.</p>
                         </div>
                         <ul class="pricing-features">
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" fill="#2ecc71"/>
                                 </svg>
-                                Everything in Standard
+                                Build Course
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" fill="#2ecc71"/>
+                                </svg>
+                                Launch Course
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" fill="#2ecc71"/>
+                                </svg>
+                                Monetize Course
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" fill="#2ecc71"/>
                                 </svg>
                                 Full Source Code
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" fill="#2ecc71"/>
                                 </svg>
                                 Priority Chat Support
                             </li>
@@ -796,6 +866,7 @@
                 </div>
             </div>
         </section>
+
     </main>
     
     <!-- Footer -->
